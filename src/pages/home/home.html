@@ -5,7 +5,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
   <ion-title>
-    Blockchain based decoupled payment system
+    CoAider App
   </ion-title>
   <ion-buttons end>
     <button ion-button icon-only (click)="addTodo()"><ion-icon name="add"></ion-icon></button>
@@ -26,16 +26,16 @@
    </ion-item-divider>
 
       <ion-item>
- <button item-left ion-button class="colorbutton"  > We charge 2% on transaction </button>
- <button item-right ion-button class="colorbutton"  > Paypal charges 6% on transaction  </button>
+ <button item-left ion-button class="colorbutton"  > Connect co workers </button>
+ <button item-right ion-button class="colorbutton"  > Team building  </button>
 
       </ion-item>
       <ion-item>
- <button item-left ion-button class="colorbutton"  > 5$/month subscription </button>
+ <button item-left ion-button class="colorbutton"  > Responsive </button>
       </ion-item>
       <ion-item>
- <button item-left ion-button class="colorbutton"  > Money sent as code and PIN  </button>
- <button item-right ion-button class="colorbutton"  > Money received as code and PIN  </button>
+ <button item-left ion-button class="colorbutton"  > Accessable </button>
+ <button item-right ion-button class="colorbutton"  > Flexible </button>
       </ion-item>
     <ion-item-sliding *ngFor="let todo of todos">
 
@@ -51,6 +51,73 @@
       </ion-item-options>
     </ion-item-sliding>
 
+
+   <ion-item-divider class="roundedge">
+        Refer a friend
+   </ion-item-divider>
+
   </ion-list>
+
+<ion-segment [(ngModel)]="relationship" color="primary" >
+    <ion-segment-button value="events">
+      Events
+    </ion-segment-button>
+    <ion-segment-button value="news">
+      News
+    </ion-segment-button>
+    <ion-segment-button value="deals">
+      Deals
+    </ion-segment-button>
+  </ion-segment>
+<div [ngSwitch]="relationship">
+  <ion-list *ngSwitchCase="'news'">
+
+   <ion-item-divider class="roundedge">
+        News
+   </ion-item-divider>
+   <ion-item-sliding *ngFor="let item of items" #slidingItem [animateItemSliding]="shouldAnimate" >
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img [src]="item.imageUrl">
+        </ion-thumbnail>
+        <h2>{{item.title}}</h2>
+        <p>{{item.place}} • {{item.date}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="viewComments(item)">
+        <ion-icon name="chatbubbles"></ion-icon>
+        Comments
+      </button>
+        <button ion-button color="primary" (click)="viewPlayers(item)">
+        <ion-icon name="contacts"></ion-icon>
+        Players
+      </button>
+        <button ion-button color="danger" (click)="delete(item)">
+        <ion-icon name="trash"></ion-icon>
+        Delete
+      </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</div>
+<div [ngSwitch]="relationship">
+  <ion-list *ngSwitchCase="'events'">
+   <ion-item-divider class="roundedge">
+        Events
+   </ion-item-divider>
+  <p> To be added </p>
+  </ion-list>
+</div>
+<div [ngSwitch]="relationship">
+  <ion-list *ngSwitchCase="'deals'">
+   <ion-item-divider class="roundedge">
+        Deals
+   </ion-item-divider>
+  <p> To be added </p>
+
+  </ion-list>
+</div>
+
+
 
 </ion-content>

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
+import { DirectivesModule } from '../directives/directives.module';
 import { QRCodeModule } from 'angular2-qrcode';
 import { MyApp } from './app.component';
 import { HomePageModule } from '../pages/home/home.module';
@@ -54,6 +55,7 @@ import { CouponviewPageModule } from '../pages/couponview/couponview.module';
   imports: [
     BrowserModule,
     HttpModule,
+    DirectivesModule,
     HomePageModule,
     QRCodeModule,
     ListPageModule,

@@ -12,6 +12,29 @@ export class HomePage {
 
   todos: any;
   loading: any;
+  relationship : string = 'news';
+
+   items = [
+    {
+      imageUrl: 'assets/img/lists/stadium.jpg',
+      title: 'First Cup',
+      place: 'Madison Square',
+      date: '05/06/2016'
+    },
+    {
+      imageUrl: 'assets/img/lists/stadium-3.png',
+      title: 'Season',
+      place: 'Hooli',
+      date: '15/03/2016'
+    },
+    {
+      imageUrl: 'assets/img/lists/stadium-2.jpg',
+      title: '2nd Season',
+      place: 'Castelão',
+      date: '05/12/2015'
+    },
+  ];
+
 
   constructor(public navCtrl: NavController, public todoService: Todos, public modalCtrl: ModalController, 
     public alertCtrl: AlertController, public authService: Auth, public loadingCtrl: LoadingController) {
@@ -31,6 +54,19 @@ export class HomePage {
   loadTodos(){
 
   }
+  
+  delete(item) {
+    alert('Deleted ' + item.title);
+  }
+
+  viewComments(item) {
+    alert('Viewing comments of ' + item.title);
+  }
+
+  viewPlayers(item) {
+    alert('Viewing players of ' + item.title);
+  }
+
 
   addTodo(){
 

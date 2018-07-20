@@ -21,3 +21,58 @@
                 color: map-get($colors, secondary);
 }
 
+@-webkit-keyframes slidingAnimation {
+  0% {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+
+  50% {
+    transform: translate3d(-70px,0,0);
+    -webkit-transform: translate3d(-70px,0,0);
+  }
+
+  100% {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+
+@-webkit-keyframes rightslidingAnimation {
+  0% {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+
+  50% {
+    transform: translate3d(70px,0,0);
+    -webkit-transform: translate3d(70px,0,0);
+  }
+
+  100% {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+
+.itemSlidingAnimation {
+    -webkit-animation: slidingAnimation;
+    animation: slidingAnimation;
+    -webkit-animation-duration: 2000ms;
+    animation-duraton: 2000ms;
+}
+
+.rightitemSlidingAnimation {
+    -webkit-animation: slidingAnimation;
+    animation: rightslidingAnimation;
+    -webkit-animation-duration: 2000ms;
+    animation-duraton: 2000ms;
+}
+
+
+ion-item-sliding ion-label {
+     border-left: 2px solid 1;
+     padding-left: 10px;
+ }
+  
+

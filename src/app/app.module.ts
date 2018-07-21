@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { ComponentsModule } from '../components/components.module';
+
 
 import { DirectivesModule } from '../directives/directives.module';
 import { QRCodeModule } from 'angular2-qrcode';
@@ -28,8 +30,10 @@ import { ServerlessPayment } from '../providers/serverlesspayment';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { ProfileFivePageModule } from '../pages/profile-five/profile-five.module';
 import { CouponIssuePageModule } from '../pages/coupon-issue/coupon-issue.module';
 import { PaymentIssuePageModule } from '../pages/payment-issue/payment-issue.module';
+import { BookingRoomPageModule } from '../pages/booking-room/booking-room.module';
 import { PlansPageModule } from '../pages/plans/plans.module';
 import { CouponRedeemPageModule } from '../pages/coupon-redeem/coupon-redeem.module';
 import { PaymentAcceptPageModule } from '../pages/payment-accept/payment-accept.module';
@@ -56,7 +60,10 @@ import { CouponviewPageModule } from '../pages/couponview/couponview.module';
     BrowserModule,
     HttpModule,
     DirectivesModule,
+    ComponentsModule,
     HomePageModule,
+    BookingRoomPageModule,
+    ProfileFivePageModule,
     QRCodeModule,
     ListPageModule,
     PlansPageModule,

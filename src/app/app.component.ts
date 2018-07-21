@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { BalancesPage } from '../pages/balances/balances';
+import { ProfileFivePage } from '../pages/profile-five/profile-five';
 import { SerlessettingPage } from '../pages/serlessetting/serlessetting';
 import { CouponsPage } from '../pages/coupons/coupons';
 import { PaymentsmadePage } from '../pages/paymentsmade/paymentsmade';
@@ -14,6 +15,7 @@ import { PaymentsreceivedPage } from '../pages/paymentsreceived/paymentsreceived
 import { PlansPage } from '../pages/plans/plans';
 import { CouponIssuePage } from '../pages/coupon-issue/coupon-issue';
 import { PaymentIssuePage } from '../pages/payment-issue/payment-issue';
+import { BookingRoomPage } from '../pages/booking-room/booking-room';
 import { CouponRedeemPage } from '../pages/coupon-redeem/coupon-redeem';
 import { PaymentAcceptPage } from '../pages/payment-accept/payment-accept';
 import { ServerlessSendPage } from '../pages/serverless-send/serverless-send';
@@ -40,7 +42,7 @@ export class MyApp {
 
 
     this.pages = [
-      { title: 'Profile', component: HomePage, parent: '', open: "true" , icon: 'home' },
+      { title: 'Profile', component: ProfileFivePage, parent: '', open: "true" , icon: 'home' },
       { title: 'Signup', component: SignupPage,  parent: '', open: "true",icon: 'home' },
       { title: 'Login', component: LoginPage, parent: '',  open: "true",icon: 'home' },
       { title: 'Divider', component: '' , parent: '',  open: "true",icon: 'none' },
@@ -52,7 +54,7 @@ export class MyApp {
       { title: 'Payments ', component: HomePage,parent: 'Company details', open: "false",  icon: 'home' },
 
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
-      { title: 'Booking', component: HomePage,parent: '',  open: "true", icon: 'home' },
+      { title: 'Booking', component: BookingRoomPage,parent: '',  open: "true", icon: 'home' },
       { title: 'Member Forum', component: HomePage,parent: '',  open: "true", icon: 'home' },
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
       { title: 'Visitor management', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },

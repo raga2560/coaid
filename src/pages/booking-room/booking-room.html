@@ -1,0 +1,63 @@
+<!--
+  Generated template for the DroneLockPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Room booking </ion-title>
+ </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list  inset padding>
+   <ion-item-divider class="roundedge">
+             Room booking 
+        </ion-item-divider>
+
+        <ion-item>
+                    <ion-label>Select room </ion-label>
+                    <ion-select [(ngModel)]="bookingdata.roomname">
+                        <ion-option *ngFor="let todo of rooms"
+                        value={{todo.name}}
+                        > {{todo.name}} 
+                        </ion-option>
+                    </ion-select>
+        </ion-item>
+        <ion-item>
+        <div class="item item-icon-left" ion-datetime-picker date ng-model="dateValue">
+                <i class="icon ion-ios-calendar positive"></i>
+                Click me to open the date picker:
+                <strong>{{dateValue| date: "yyyy-MM-dd"}}</strong>
+            </div>
+
+        </ion-item>
+
+<ion-item>
+ <ion-label><ion-icon name="date"></ion-icon> Select date</ion-label>
+  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="bookingdate"></ion-datetime>
+</ion-item>
+
+        <ion-item>
+ <ion-label><ion-icon name="clock"></ion-icon> Start time </ion-label>
+  <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm " minuteValues="0,15,30,45" [(ngModel)]="starttime"></ion-datetime>
+        </ion-item>
+        <ion-item>
+        </ion-item>
+
+        <ion-item>
+ <ion-label><ion-icon name="clock"></ion-icon> End time </ion-label>
+  <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm " minuteValues="0,15,30,45" [(ngModel)]="endtime"></ion-datetime>
+
+        </ion-item>
+
+
+   </ion-list>
+
+</ion-content>

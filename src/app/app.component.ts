@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 import { ListPage } from '../pages/list/list';
 import { BalancesPage } from '../pages/balances/balances';
 import { ProfileFivePage } from '../pages/profile-five/profile-five';
@@ -55,7 +56,7 @@ export class MyApp {
 
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
       { title: 'Booking', component: BookingRoomPage,parent: '',  open: "true", icon: 'home' },
-      { title: 'Member Forum', component: HomePage,parent: '',  open: "true", icon: 'home' },
+      { title: 'Member Forum', component: TabsPage,parent: '',  open: "true", icon: 'home' },
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
       { title: 'Visitor management', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },
       { title: 'Visitor list ', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },

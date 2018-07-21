@@ -10,6 +10,10 @@ import { DirectivesModule } from '../directives/directives.module';
 import { QRCodeModule } from 'angular2-qrcode';
 import { MyApp } from './app.component';
 import { HomePageModule } from '../pages/home/home.module';
+import { TabsPageModule } from '../pages/tabs/tabs.module';
+import { ThreadsPageModule } from '../pages/threads/threads.module';
+import { ThreadCommentsPageModule } from '../pages/thread-comments/thread-comments.module';
+import { ThreadCreatePageModule } from '../pages/thread-create/thread-create.module';
 import { ListPageModule } from '../pages/list/list.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { LoginPage } from '../pages/login-page/login-page';
@@ -62,6 +66,10 @@ import { CouponviewPageModule } from '../pages/couponview/couponview.module';
     DirectivesModule,
     ComponentsModule,
     HomePageModule,
+    TabsPageModule,
+    ThreadsPageModule,
+    ThreadCommentsPageModule,
+    ThreadCreatePageModule,
     BookingRoomPageModule,
     ProfileFivePageModule,
     QRCodeModule,

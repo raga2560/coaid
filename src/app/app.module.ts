@@ -18,6 +18,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { LoginPage } from '../pages/login-page/login-page';
 import { SignupPage } from '../pages/signup-page/signup-page';
 import { Auth } from '../providers/auth';
+import { Popservice } from '../providers/popservice';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -82,6 +83,7 @@ import { VisitorExpectedPageModule } from '../pages/visitor-expected/visitor-exp
     SplashScreen,
     SocialSharing,
     Auth,
+    Popservice,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -52,7 +52,7 @@ export class MyApp {
       { title: 'Payments ', component: PaymentsPage,parent: 'Company details', open: "false",  icon: 'home' },
 
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
-      { title: 'Booking', component: BookingRoomPage,parent: '',  open: "true", icon: 'home' },
+      { title: 'Room Booking', component: BookingRoomPage,parent: '',  open: "true", icon: 'home' },
       { title: 'Member Forum', component: TabsPage,parent: '',  open: "true", icon: 'home' },
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
       { title: 'Visitor management', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },

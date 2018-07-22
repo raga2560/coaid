@@ -21,7 +21,22 @@
              Room booking 
         </ion-item-divider>
 
-        <ion-item>
+       <ion-item-sliding *ngFor="let todo of rooms">
+
+      <ion-item>
+       <ion-label >
+        <h3> {{todo.name}} </h3>
+        </ion-label>
+
+        <button ion-button item-right class="colorbutton" >
+          Select
+        </button>
+      </ion-item>
+
+    </ion-item-sliding>
+
+
+        <!-- ion-item>
                     <ion-label>Select room </ion-label>
                     <ion-select [(ngModel)]="bookingdata.roomname">
                         <ion-option *ngFor="let todo of rooms"
@@ -29,27 +44,31 @@
                         > {{todo.name}} 
                         </ion-option>
                     </ion-select>
-        </ion-item>
+        </ion-item -->
 
 <ion-item>
- <ion-label><ion-icon name="date"></ion-icon> Select date</ion-label>
+<ion-label><ion-icon name="date"></ion-icon> Select booking date</ion-label>
   <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="bookingdate"></ion-datetime>
 </ion-item>
 
         <ion-item>
- <ion-label><ion-icon name="clock"></ion-icon> Start time </ion-label>
+   <ion-label><ion-icon name="clock"></ion-icon> Booking start time </ion-label>
   <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm " minuteValues="0,15,30,45" [(ngModel)]="starttime"></ion-datetime>
-        </ion-item>
-        <ion-item>
         </ion-item>
 
         <ion-item>
- <ion-label><ion-icon name="clock"></ion-icon> End time </ion-label>
+  <ion-label><ion-icon name="clock"></ion-icon> Booking end time </ion-label>
   <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm " minuteValues="0,15,30,45" [(ngModel)]="endtime"></ion-datetime>
+
+        </ion-item>
+        <ion-item>
+   <button ion-button full  class="colorbutton">Book </button>
 
         </ion-item>
 
 
    </ion-list>
+ 
+
 
 </ion-content>

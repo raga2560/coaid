@@ -10,16 +10,21 @@
 </ion-header>
 
 <ion-content>
-    <div *ngIf="!commentsLoaded">
-        <img src="assets/images/ring.gif" style="display:block; margin:auto" />
-    </div>
-    <ion-list *ngIf="commentsLoaded">
+    <ion-item>
+                    <ion-avatar item-left>
+                         <img src="assets/img/avatar/marty-avatar.png">
+                    </ion-avatar>
+                    <h2> Title: Angular training </h2>
+                    <p> Question: Can we get training</p>
+    </ion-item>
+ <ion-item-divider color="light">Comments</ion-item-divider>
+    <ion-list *ngIf="comments">
         <ion-item *ngFor="let comment of comments" text-wrap>
             <ion-card>
 
                 <ion-item>
                     <ion-avatar item-left>
-                        <!-- forum-user-avatar [user]="comment.user"></forum-user-avatar -->
+                         <img src="assets/img/avatar/marty-avatar.png">
                     </ion-avatar>
                     <h2>{{comment.user.username}}</h2>
                     <p>{{comment.dateCreated | date:'medium'}}</p>

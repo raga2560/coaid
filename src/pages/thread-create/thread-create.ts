@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ViewController, LoadingController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
 
-// import { IThread } from '../../shared/interfaces';
+import { IThread } from '../../shared/interfaces';
 // import { AuthService } from  '../../shared/services/auth.service';
 // import { DataService } from '../../shared/services/data.service';
 
@@ -27,7 +27,7 @@ export class ThreadCreatePage implements OnInit {
 
   ngOnInit() {
     console.log('in thread create..');
-/*    this.createThreadForm = this.fb.group({
+    this.createThreadForm = this.fb.group({
       'title': ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       'question': ['', Validators.compose([Validators.required, Validators.minLength(10)])],
       'category': ['', Validators.compose([Validators.required, Validators.minLength(1)])]
@@ -36,9 +36,9 @@ export class ThreadCreatePage implements OnInit {
     this.title = this.createThreadForm.controls['title'];
     this.question = this.createThreadForm.controls['question'];
     this.category = this.createThreadForm.controls['category'];
-*/
+
   }
-/*
+
   cancelNewThread() {
     this.viewCtrl.dismiss();
   }
@@ -53,7 +53,7 @@ export class ThreadCreatePage implements OnInit {
       });
 
       loader.present();
-
+/*
       let uid = self.authService.getLoggedInUser().uid;
       self.dataService.getUsername(uid).then(function (snapshot) {
         let username = snapshot.val();
@@ -61,13 +61,13 @@ export class ThreadCreatePage implements OnInit {
         self.dataService.getTotalThreads().then(function (snapshot) {
           let currentNumber = snapshot.val();
           let newPriority: number = currentNumber === null ? 1 : (currentNumber + 1);
-
+*/
           let newThread: IThread = {
             key: null,
             title: thread.title,
             question: thread.question,
             category: thread.category,
-            user: { uid: uid, username: username },
+            user: { uid: 'uid102', username: 'ramji' },
             dateCreated: new Date().toString(),
             comments: null
           };
@@ -86,11 +86,11 @@ export class ThreadCreatePage implements OnInit {
               console.error(error);
               loader.dismiss();
             });
-        });
-      });
+//        });
+//      });
     }
   }
  
-*/
+
 
 }

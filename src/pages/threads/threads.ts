@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController, ModalController, ToastController, Content, Events } from 'ionic-angular';
-/*
+
 import { IThread } from '../../shared/interfaces';
-import { ThreadCreatePage } from '../thread-create/thread-create';
+import { IUser } from '../../shared/interfaces';
 import { ThreadCommentsPage } from '../thread-comments/thread-comments';
+/*
+import { ThreadCreatePage } from '../thread-create/thread-create';
 import { AuthService } from '../../shared/services/auth.service';
 import { DataService } from '../../shared/services/data.service';
 import { MappingsService } from '../../shared/services/mappings.service';
@@ -24,7 +26,7 @@ export class ThreadsPage implements OnInit {
   public loading: boolean = true;
   public internetConnected: boolean = true;
 
-  public threads: Array<any> = [];
+  public threads: Array<IThread> = [];
   public newThreads: Array<any> = [];
   public favoriteThreadKeys: string[];
 
@@ -40,8 +42,46 @@ export class ThreadsPage implements OnInit {
     public mappingsService: MappingsService,
     public itemsService: ItemsService,
 */
-    public events: Events) { }
+    public events: Events) { 
+    var user: IUser = {
+         uid: 'uid101',
+         username: 'ramesh'
 
+    };
+
+   var thread1 : IThread =   
+    {
+    key: 'randsjsstring',
+    title: 'Need angular programmer',
+    question: 'Can we find some one',
+    category: 'work',
+    dateCreated: '12/02/2018',
+    user: user,
+    comments: 0
+    };
+   var thread2 : IThread =
+    {
+    key: 'randsjsstring1',
+    title: 'Need angular 2 programmer',
+    question: 'Can we find some one',
+    category: 'work',
+    dateCreated: '12/02/2018',
+    user: user,
+    comments: 0
+    };
+
+
+   this.threads.push(thread1);
+   this.threads.push(thread2);
+
+
+
+   }
+  
+   viewComments(thread) {
+    var comments = {};
+    this.navCtrl.push(ThreadCommentsPage, {thread: thread}); 
+   }
 
   ngOnInit() {
 /*    var self = this;
@@ -51,6 +91,8 @@ export class ThreadsPage implements OnInit {
 
     self.checkFirebase();
 */
+
+
   }
 
 /*

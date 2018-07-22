@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
     </button>
-    <ion-segment [(ngModel)]="segment" (ionChange)="filterThreads(segment)">
+    <ion-segment [(ngModel)]="segment" >
       <ion-segment-button value="all">
         All
       </ion-segment-button>
@@ -23,7 +23,7 @@
   </ion-navbar>
 
   <ion-toolbar no-border-top>
-    <ion-searchbar primary [(ngModel)]="queryText" (ionInput)="searchThreads()" placeholder="Search for a thread..">
+    <ion-searchbar primary [(ngModel)]="queryText"  placeholder="Search for a thread..">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -34,15 +34,51 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <div *ngIf="loading">
-    <img src="assets/images/ring.gif" style="display:block; margin:auto" />
-  </div>
 
-  <ion-list *ngIf="!loading">
+  <ion-list *ngIf="threads.length > 0">
     <!-- forum-thread *ngFor="let thread of threads" [thread]="thread" (onViewComments)="viewComments($event)"></forum-thread -->
+  
+
+    <ion-card  *ngFor="let thread of threads">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/img/avatar/marty-avatar.png">
+    </ion-avatar>
+    <h2>Marty McFly</h2>
+    <p>November 5, 1955</p>
+  </ion-item>
+
+  <ion-card-title>
+  {{thread.title}}
+  </ion-card-title>
+
+  <ion-card-content>
+    <p> {{thread.question}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-start clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-start clear small (click) = "viewComments(thread)">
+        <ion-icon name="text"></ion-icon>
+        <div>{{thread.comments}} Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
   </ion-list>
 
-  <ion-infinite-scroll (ionInfinite)="fetchNextThreads($event)" threshold="10px" *ngIf="(start > 0) && (queryText.trim().length == 0) && segment=='all' && internetConnected">
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
 </ion-content>

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActionSheetController, ModalController, ToastController, LoadingController, NavParams, Content } from 'ionic-angular';
 
 import { CommentCreatePage } from '../comment-create/comment-create';
-//import { IComment } from '../../shared/interfaces';
+import { IComment ,IUser} from '../../shared/interfaces';
 //import { AuthService } from '../../shared/services/auth.service';
 //import { DataService } from '../../shared/services/data.service';
 //import { ItemsService } from '../../shared/services/items.service';
@@ -26,7 +26,40 @@ export class ThreadCommentsPage implements OnInit {
 //        public itemsService: ItemsService,
 //        public dataService: DataService,
 //        public mappingsService: MappingsService
-       ) { }
+       ) {
+
+     var user: IUser = {
+         uid: 'uid101',
+         username: 'ramesh'
+
+    };
+
+
+
+       this.comments = [
+      {
+        key: 'sgsgsg',
+    thread: 'thread-2',
+    text: 'Awesome stuff',
+    user: user,
+    dateCreated: new Date().toString(), 
+    votesUp: 4,
+    votesDown: 2
+    },
+      {
+        key: 'uusgsgsg',
+    thread: 'thread-2',
+    text: 'Ok stuff',
+    user: user,
+    dateCreated: new Date().toString(), 
+    votesUp: 4,
+    votesDown: 2
+    }
+
+
+       ];
+
+       }
 
 
 

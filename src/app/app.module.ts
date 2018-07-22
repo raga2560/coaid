@@ -7,7 +7,6 @@ import { ComponentsModule } from '../components/components.module';
 
 
 import { DirectivesModule } from '../directives/directives.module';
-import { QRCodeModule } from 'angular2-qrcode';
 import { MyApp } from './app.component';
 import { HomePageModule } from '../pages/home/home.module';
 import { TabsPageModule } from '../pages/tabs/tabs.module';
@@ -15,43 +14,27 @@ import { ThreadsPageModule } from '../pages/threads/threads.module';
 import { ThreadCommentsPageModule } from '../pages/thread-comments/thread-comments.module';
 import { ThreadCreatePageModule } from '../pages/thread-create/thread-create.module';
 import { CommentCreatePageModule } from '../pages/comment-create/comment-create.module';
-import { ListPageModule } from '../pages/list/list.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { LoginPage } from '../pages/login-page/login-page';
 import { SignupPage } from '../pages/signup-page/signup-page';
-import { Todos } from '../providers/todos';
-import { Planmanager } from '../providers/planmanager';
-import { Coupon } from '../providers/coupon';
 import { Auth } from '../providers/auth';
-import { Bitcoin } from '../providers/bitcoin';
-import { Popservice } from '../providers/popservice';
-import { Payment } from '../providers/payment';
-import { Serverless } from '../providers/serverless';
-import { ServerlessWallet } from '../providers/serverlesswallet';
-import { ServerlessTransaction } from '../providers/serverlesstransaction';
-import { ServerlessPayment } from '../providers/serverlesspayment';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ProfileFivePageModule } from '../pages/profile-five/profile-five.module';
-import { CouponIssuePageModule } from '../pages/coupon-issue/coupon-issue.module';
-import { PaymentIssuePageModule } from '../pages/payment-issue/payment-issue.module';
 import { BookingRoomPageModule } from '../pages/booking-room/booking-room.module';
-import { PlansPageModule } from '../pages/plans/plans.module';
-import { CouponRedeemPageModule } from '../pages/coupon-redeem/coupon-redeem.module';
-import { PaymentAcceptPageModule } from '../pages/payment-accept/payment-accept.module';
-import { ServerlessSendPageModule } from '../pages/serverless-send/serverless-send.module';
-import { ServerlessReceivePageModule } from '../pages/serverless-receive/serverless-receive.module';
-import { CouponAdminPageModule } from '../pages/coupon-admin/coupon-admin.module';
-import { CouponsPageModule } from '../pages/coupons/coupons.module';
-import { PaymentsmadePageModule } from '../pages/paymentsmade/paymentsmade.module';
-import { PaymentsreceivedPageModule } from '../pages/paymentsreceived/paymentsreceived.module';
-import { BalancesPageModule } from '../pages/balances/balances.module';
-import { SerlessettingPageModule } from '../pages/serlessetting/serlessetting.module';
-import { PlanviewPageModule } from '../pages/planview/planview.module';
-import { CouponviewPageModule } from '../pages/couponview/couponview.module';
+import { HelpPageModule } from '../pages/help/help.module';
+import { TicketPageModule } from '../pages/ticket/ticket.module';
+import { LogoutPageModule } from '../pages/logout/logout.module';
+import { CompanyPageModule } from '../pages/company/company.module';
+import { EmployeePageModule } from '../pages/employee/employee.module';
+import { FinancialPageModule } from '../pages/financial/financial.module';
+import { BillsPageModule } from '../pages/bills/bills.module';
+import { PaymentsPageModule } from '../pages/payments/payments.module';
+import { VisitorListPageModule } from '../pages/visitor-list/visitor-list.module';
+import { VisitorExpectedPageModule } from '../pages/visitor-expected/visitor-expected.module';
 
 
 @NgModule({
@@ -74,23 +57,16 @@ import { CouponviewPageModule } from '../pages/couponview/couponview.module';
     ThreadCreatePageModule,
     BookingRoomPageModule,
     ProfileFivePageModule,
-    QRCodeModule,
-    ListPageModule,
-    PlansPageModule,
-    PlanviewPageModule,
-    CouponviewPageModule,
-    BalancesPageModule,
-    SerlessettingPageModule,
-    CouponIssuePageModule,
-    PaymentIssuePageModule,
-    ServerlessSendPageModule,
-    ServerlessReceivePageModule,
-    CouponsPageModule,
-    PaymentsmadePageModule,
-    PaymentsreceivedPageModule,
-    CouponRedeemPageModule,
-    PaymentAcceptPageModule,
-    CouponAdminPageModule,
+    HelpPageModule,
+    TicketPageModule,
+    CompanyPageModule,
+    EmployeePageModule,
+    FinancialPageModule,
+    BillsPageModule,
+    PaymentsPageModule,
+    VisitorListPageModule,
+    VisitorExpectedPageModule,
+    LogoutPageModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -104,16 +80,6 @@ import { CouponviewPageModule } from '../pages/couponview/couponview.module';
   providers: [
     StatusBar,
     SplashScreen,
-    Todos, 
-    Planmanager, 
-    Coupon, 
-    Serverless, 
-    Bitcoin, 
-    Payment, 
-    ServerlessPayment, 
-    ServerlessTransaction, 
-    ServerlessWallet, 
-    Popservice, 
     SocialSharing,
     Auth,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

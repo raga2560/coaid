@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { Payment } from '../../providers/payment';
-import { Bitcoin } from '../../providers/bitcoin';
-import { Popservice } from '../../providers/popservice';
-
-import { Planmanager } from '../../providers/planmanager';
 
 /**
  * Generated class for the PaymentIssuePage page.
@@ -21,23 +16,14 @@ import { Planmanager } from '../../providers/planmanager';
 export class BookingRoomPage {
 
 
-  payments: any;
-  payment: any;
-  balance: any;
   loading: any;
   endtime: any;
   starttime: any;
   bookingdata: any;
-  availablePlans: any;
   rooms: any;
-  payee: any;
-  availableSchemes: any;
 
-  constructor(public navCtrl: NavController, public paymentService: Payment, 
-              public managerService: Planmanager,
-              public bitcoinService: Bitcoin,
+  constructor(public navCtrl: NavController, 
               public loadingCtrl: LoadingController,
-              public alertCtrl: Popservice,
               public navParams: NavParams) {
 
     this.bookingdata = {
@@ -47,11 +33,6 @@ export class BookingRoomPage {
 	    timein: '',
             timeout: ''
     };
-    this.availablePlans = '';
-    this.availableSchemes = '';
-    this.balance = '';
-//    this.getAvailablePlans();
-//    this.getAvailableSchemes();
     this.rooms = [
 	{name: 'MR101', phone: '4567878990'},
 	{name: 'MR102', phone: '9897878990'}

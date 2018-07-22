@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { NavController, ModalController, AlertController, LoadingController } from 'ionic-angular';
-import { Todos } from '../../providers/todos';
 import { Auth } from '../../providers/auth';
 import { LoginPage } from '../login-page/login-page';
 
@@ -36,11 +35,11 @@ export class HomePage {
   ];
 
 
-  constructor(public navCtrl: NavController, public todoService: Todos, public modalCtrl: ModalController, 
+  constructor(public navCtrl: NavController,  public modalCtrl: ModalController, 
     public alertCtrl: AlertController, public authService: Auth, public loadingCtrl: LoadingController) {
 
   }
-
+/*
   ionViewDidLoad(){
 
     this.todoService.getTodos().then((data) => {
@@ -142,6 +141,7 @@ export class HomePage {
     this.loading.present();
 
   }
+ */
 
   logout(){
     

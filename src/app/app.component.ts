@@ -7,21 +7,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ListPage } from '../pages/list/list';
-import { BalancesPage } from '../pages/balances/balances';
 import { ProfileFivePage } from '../pages/profile-five/profile-five';
-import { SerlessettingPage } from '../pages/serlessetting/serlessetting';
-import { CouponsPage } from '../pages/coupons/coupons';
-import { PaymentsmadePage } from '../pages/paymentsmade/paymentsmade';
-import { PaymentsreceivedPage } from '../pages/paymentsreceived/paymentsreceived';
-import { PlansPage } from '../pages/plans/plans';
-import { CouponIssuePage } from '../pages/coupon-issue/coupon-issue';
-import { PaymentIssuePage } from '../pages/payment-issue/payment-issue';
+
 import { BookingRoomPage } from '../pages/booking-room/booking-room';
-import { CouponRedeemPage } from '../pages/coupon-redeem/coupon-redeem';
-import { PaymentAcceptPage } from '../pages/payment-accept/payment-accept';
-import { ServerlessSendPage } from '../pages/serverless-send/serverless-send';
-import { ServerlessReceivePage } from '../pages/serverless-receive/serverless-receive';
-import { CouponAdminPage } from '../pages/coupon-admin/coupon-admin';
+import { VisitorExpectedPage } from '../pages/visitor-expected/visitor-expected';
+import { VisitorListPage } from '../pages/visitor-list/visitor-list';
+import { EmployeePage } from '../pages/employee/employee';
+import { CompanyPage } from '../pages/company/company';
+import { FinancialPage } from '../pages/financial/financial';
+import { BillsPage } from '../pages/bills/bills';
+import { HelpPage } from '../pages/help/help';
+import { TicketPage } from '../pages/ticket/ticket';
+import { LogoutPage } from '../pages/logout/logout';
+import { PaymentsPage } from '../pages/payments/payments';
 import { LoginPage } from '../pages/login-page/login-page';
 import { SignupPage } from '../pages/signup-page/signup-page';
 
@@ -48,22 +46,23 @@ export class MyApp {
       { title: 'Login', component: LoginPage, parent: '',  open: "true",icon: 'home' },
       { title: 'Divider', component: '' , parent: '',  open: "true",icon: 'none' },
       { title: 'Company details', component: HomePage,parent: 'Company details',   open: "false",icon: 'home' },
-      { title: 'Company ', component: HomePage,parent: 'Company details',  open: "false", icon: 'home' },
-      { title: 'Employee ', component: HomePage,parent: 'Company details',  open: "false", icon: 'home' },
-      { title: 'Financial ', component: HomePage,parent: 'Company details',  open: "false", icon: 'home' },
-      { title: 'Bills ', component: HomePage,parent: 'Company details',  open: "false", icon: 'home' },
-      { title: 'Payments ', component: HomePage,parent: 'Company details', open: "false",  icon: 'home' },
+      { title: 'Company ', component: CompanyPage,parent: 'Company details',  open: "false", icon: 'home' },
+      { title: 'Employee ', component: EmployeePage,parent: 'Company details',  open: "false", icon: 'home' },
+      { title: 'Financial ', component: FinancialPage,parent: 'Company details',  open: "false", icon: 'home' },
+      { title: 'Bills ', component: BillsPage,parent: 'Company details',  open: "false", icon: 'home' },
+      { title: 'Payments ', component: PaymentsPage,parent: 'Company details', open: "false",  icon: 'home' },
 
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
       { title: 'Booking', component: BookingRoomPage,parent: '',  open: "true", icon: 'home' },
       { title: 'Member Forum', component: TabsPage,parent: '',  open: "true", icon: 'home' },
       { title: 'Divider', component: '' ,parent: '',  open: "true", icon: 'none' },
       { title: 'Visitor management', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },
-      { title: 'Visitor list ', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },
-      { title: 'Visitor expected ', component: HomePage,parent: 'Visitor management',  open: "false", icon: 'home' },
-      { title: 'Tickets ', component: HomePage,parent: '', open: "true",  icon: 'home' },
-      { title: 'Help ', component: HomePage,parent: '',  open: "true", icon: 'home' },
-      { title: 'Logout ', component: HomePage,parent: '',  open: "true", icon: 'home' },
+      { title: 'Visitor list ', component: VisitorListPage,parent: 'Visitor management',  open: "false", icon: 'home' },
+      { title: 'Visitor expected ', component: VisitorExpectedPage,parent: 'Visitor management',  open: "false", icon: 'home' },
+      { title: 'Divider', component: '' , parent: '',  open: "true",icon: 'none' },
+      { title: 'Tickets ', component: TicketPage,parent: '', open: "true",  icon: 'home' },
+      { title: 'Help ', component: HelpPage,parent: '',  open: "true", icon: 'home' },
+      { title: 'Logout ', component: LogoutPage,parent: '',  open: "true", icon: 'home' },
 
       { title: 'Divider', component: '',parent: '', open: "true",  icon: 'none' }
     ];

@@ -14,8 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'visitor-list.html',
 })
 export class VisitorListPage {
+ 
+  allvisitors: any;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  this.allvisitors = [
+  {
+  name: 'Rajesh',
+  datetime: '12/01/2018, 8.30 AM'
+  },
+  {
+  name: 'Rajesh kumar',
+  datetime: '12/01/2018, 8.30 AM'
+  }
+
+  ];
+
+
   }
 
   ionViewDidLoad() {

@@ -14,8 +14,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'bills.html',
 })
 export class BillsPage {
+  
+  bills: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  this.bills = [
+  {
+  billname: 'MR201 room charges',
+  billamount: '10000',
+  duedate: '12/01/2018',
+  billdate: '10/01/2018'
+  },
+  {
+  billname: 'Monthly rent sept 2018 ',
+  billamount: '7000',
+  duedate: '12/01/2018',
+  billdate: '10/01/2018'
+  }
+
+  ];
+
   }
 
   ionViewDidLoad() {

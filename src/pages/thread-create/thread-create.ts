@@ -72,7 +72,7 @@ export class ThreadCreatePage implements OnInit {
             comments: null
           };
 
-          self.dataService.submitThread(newThread, newPriority)
+ /*         self.dataService.submitThread(newThread, newPriority)
             .then(function (snapshot) {
               loader.dismiss()
                 .then(() => {
@@ -86,6 +86,7 @@ export class ThreadCreatePage implements OnInit {
               console.error(error);
               loader.dismiss();
             });
+*/
 //        });
 //      });
     }

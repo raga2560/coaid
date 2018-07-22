@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ViewController, LoadingController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
 
-//import { IComment, IUser } from '../../shared/interfaces';
+import { IComment, IUser } from '../../shared/interfaces';
 //import { AuthService } from '../../shared/services/auth.service';
 //import { DataService } from '../../shared/services/data.service';
 
@@ -41,7 +41,7 @@ export class CommentCreatePage implements OnInit {
   cancelNewComment() {
     this.viewCtrl.dismiss();
   }
-/*
+
   onSubmit(commentForm: any): void {
     var self = this;
     if (this.createCommentForm.valid) {
@@ -52,7 +52,7 @@ export class CommentCreatePage implements OnInit {
       });
 
       loader.present();
-
+/*
       let uid = self.authService.getLoggedInUser().uid;
       self.dataService.getUsername(uid).then(function (snapshot) {
         let username = snapshot.val();
@@ -86,8 +86,9 @@ export class CommentCreatePage implements OnInit {
             loader.dismiss();
           });
       });
+*/
     }
   }
   
-*/
+
 }

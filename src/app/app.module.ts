@@ -14,6 +14,7 @@ import { TabsPageModule } from '../pages/tabs/tabs.module';
 import { ThreadsPageModule } from '../pages/threads/threads.module';
 import { ThreadCommentsPageModule } from '../pages/thread-comments/thread-comments.module';
 import { ThreadCreatePageModule } from '../pages/thread-create/thread-create.module';
+import { CommentCreatePageModule } from '../pages/comment-create/comment-create.module';
 import { ListPageModule } from '../pages/list/list.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { LoginPage } from '../pages/login-page/login-page';
@@ -69,6 +70,7 @@ import { CouponviewPageModule } from '../pages/couponview/couponview.module';
     TabsPageModule,
     ThreadsPageModule,
     ThreadCommentsPageModule,
+    CommentCreatePageModule,
     ThreadCreatePageModule,
     BookingRoomPageModule,
     ProfileFivePageModule,

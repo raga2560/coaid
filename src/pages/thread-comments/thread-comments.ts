@@ -75,8 +75,9 @@ export class ThreadCommentsPage implements OnInit {
         }, function (error) {});
 */
     }
-/*
-    createComment() {
+
+    createComment1() {
+       alert('hi');
         let self = this;
 
         let modalPage = this.modalCtrl.create(CommentCreatePage, {
@@ -116,7 +117,7 @@ export class ThreadCommentsPage implements OnInit {
     scrollToBottom() {
         this.content.scrollToBottom();
     }
-
+/*
     vote(like: boolean, comment: IComment) {
         var self = this;
 

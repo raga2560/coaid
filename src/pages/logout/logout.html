@@ -29,7 +29,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Login </ion-title>
+    <ion-title>Logout </ion-title>
  </ion-navbar>
 </ion-header>
 
@@ -39,7 +39,7 @@
  
     <ion-row>
         <ion-col>
-            <button ion-button full  class="colorbutton">Logout</button>
+            <button ion-button full  (click)="logout()" class="colorbutton">Logout</button>
         </ion-col>
     </ion-row>
  

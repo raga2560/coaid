@@ -17,15 +17,13 @@ export class SignupPage {
   email: string;
   password: string;
   loading : any;
-  termsurl : any;
-  registrationcode: string;
 
   constructor(public navCtrl: NavController, 
 		public authService: Auth, 
 		public alertCtrl: Popservice, 
 		public loadingCtrl: LoadingController) {
 
-     this.termsurl = termsurl;
+     this.role = 'creator';
   }
 
   ionViewDidLoad() {
@@ -42,17 +40,23 @@ export class SignupPage {
   	    email: this.email,
   	    password: this.password,
   	    role: this.role,
-            registrationcode: this.registrationcode
   	};
 
   	this.authService.createAccount(details).then((result) => {
       this.loading.dismiss();
       console.log(result);
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.push(HomePage);
   	}, (err) => {
                 
   		this.loading.dismiss();
-                this.alertCtrl.presentAlert(JSON.parse(err._body).error);
+                console.log (err);
+                if(typeof err._body == 'string' && JSON.parse(err._body).error) {
+                this.alertCtrl.presentAlert("Unable to create account: " + 
+			JSON.parse(err._body).error);
+                }
+                else {
+                this.alertCtrl.presentAlert("Unable to create account");
+                }
   	});
 
   }

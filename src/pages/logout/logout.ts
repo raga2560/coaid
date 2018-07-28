@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, NavController, LoadingController } from 'ionic-angular';
+import { Auth } from '../../providers/auth';
+import { HomePage } from '../home/home';
+
+
+import { Popservice } from '../../providers/popservice';
+
 
 /**
  * Generated class for the LogoutPage page.
@@ -15,11 +21,48 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LogoutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    loading : any;
+
+
+    constructor(public navCtrl: NavController, 
+		public alertCtrl: Popservice,
+		public authService: Auth, 
+		public loadingCtrl: LoadingController) {
+
+        }
+
+        ionViewDidLoad() {
+
+                this.showLoader();
+
+                //Check if already authenticated
+                this.authService.checkAuthentication().then((res) => {
+                        console.log("Already authorized");
+                        this.loading.dismiss();
+                }, (err) => {
+                        
+                        console.log("Not already authorized");
+                        this.loading.dismiss();
+                         this.alertCtrl.presentAlert("Already logged out");
+                        this.navCtrl.setRoot(HomePage);
+                });
+
+        }
+
+    logout(){
+                this.authService.logout();
+                this.navCtrl.setRoot(HomePage);
+    }
+   showLoader(){
+
+    this.loading = this.loadingCtrl.create({
+      content: 'Authenticating...'
+    });
+
+    this.loading.present();
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LogoutPage');
-  }
+
 
 }

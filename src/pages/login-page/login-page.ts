@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Auth } from '../../providers/auth';
 import { HomePage } from '../home/home';
+import { Popservice } from '../../providers/popservice';
+
 import { SignupPage } from '../signup-page/signup-page';
 
 @Component({
@@ -14,7 +16,9 @@ export class LoginPage {
 	password: string;
 	loading: any;
 
-	constructor(public navCtrl: NavController, public authService: Auth, public loadingCtrl: LoadingController) {
+	constructor(public navCtrl: NavController, 
+                 public alertCtrl: Popservice,
+		public authService: Auth, public loadingCtrl: LoadingController) {
 
 	}
 
@@ -49,7 +53,14 @@ export class LoginPage {
         	this.navCtrl.setRoot(HomePage);
         }, (err) => {
         	this.loading.dismiss();
-        	console.log(err);
+                console.log (err);
+                if(typeof err._body == 'string' ) {
+                this.alertCtrl.presentAlert("Login failed: " + err._body);
+                }
+                else {
+                this.alertCtrl.presentAlert("Login failed");
+                }
+
         });
  
     }

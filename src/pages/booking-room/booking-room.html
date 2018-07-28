@@ -28,12 +28,15 @@
         <h3> {{todo.name}} </h3>
         </ion-label>
 
-        <button ion-button item-right class="colorbutton" >
+        <button ion-button item-right (click)="selectroom(todo)" class="colorbutton" >
           Select
         </button>
       </ion-item>
 
     </ion-item-sliding>
+      <ion-item>
+        Selected room: <span item-right> {{bookingdata.roomname}} </span>
+      </ion-item>
 
 
         <!-- ion-item>
@@ -62,10 +65,27 @@
 
         </ion-item>
         <ion-item>
-   <button ion-button full  class="colorbutton">Book </button>
+   <button ion-button full  class="colorbutton" (click)="bookroom()" >Book </button>
 
         </ion-item>
 
+   <ion-item-divider class="roundedge">
+             Current bookings 
+        </ion-item-divider>
+
+       <ion-item-sliding *ngFor="let todo of bookings">
+
+      <ion-item>
+       <ion-label >
+        <h3> {{todo.name}} </h3>
+        </ion-label>
+
+        <span item-right  >
+          {{todo.bookingdate}}, from {{todo.starttime}} to {{todo.endtime}} 
+        </span>
+      </ion-item>
+
+    </ion-item-sliding>
 
    </ion-list>
  

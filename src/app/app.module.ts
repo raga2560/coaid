@@ -19,6 +19,8 @@ import { LoginPage } from '../pages/login-page/login-page';
 import { SignupPage } from '../pages/signup-page/signup-page';
 import { Auth } from '../providers/auth';
 import { Popservice } from '../providers/popservice';
+import { BookingService } from '../providers/booking';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -84,6 +86,7 @@ import { VisitorExpectedPageModule } from '../pages/visitor-expected/visitor-exp
     SocialSharing,
     Auth,
     Popservice,
+    BookingService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

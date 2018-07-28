@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
+import { BookingService } from '../../providers/booking';
+import { Popservice } from '../../providers/popservice';
 /**
  * Generated class for the PaymentIssuePage page.
  *
@@ -19,24 +21,36 @@ export class BookingRoomPage {
   loading: any;
   endtime: any;
   starttime: any;
+  bookingdate: any;
   bookingdata: any;
   rooms: any;
+  bookings: any;
+  booking: any;
 
   constructor(public navCtrl: NavController, 
               public loadingCtrl: LoadingController,
+              public bookingService: BookingService,
+              public alertCtrl: Popservice,
               public navParams: NavParams) {
 
     this.bookingdata = {
-            bookingid: '',
+            // bookingid: '',
             roomname: '',
-            date: '',
-	    timein: '',
-            timeout: ''
+            bookingdate: '',
+	    starttime: '',
+            endtime: ''
     };
+
+    this.bookingdate = '';
+    this.starttime = '';
+    this.endtime = '' ;
+
     this.rooms = [
 	{name: 'MR101', phone: '4567878990'},
 	{name: 'MR102', phone: '9897878990'}
     ];
+    this.bookings = [];
+    this.getBookings(); 
   }
 
   ionViewDidLoad() {
@@ -52,7 +66,53 @@ export class BookingRoomPage {
     this.loading.present();
 
   }
+  selectroom(room) {
+    this.bookingdata.roomname = room.name;
 
+  }
+
+  bookroom() {
+    if(this.bookingdate == '' )
+    {
+	return alert('enter booking date');
+    }
+
+    if(this.starttime == '' || this.endtime == '')
+    {
+	return alert('enter start/end time');
+    }
+    this.bookingdata.bookingdate = this.bookingdate;
+    this.bookingdata.starttime = this.starttime;
+    this.bookingdata.endtime = this.endtime;
+    this.createBooking() ;
+
+  }
+
+  createBooking() {
+    this.showLoader();
+
+   this.bookingService.createBooking(this.bookingdata).then((result) => {
+                this.loading.dismiss();
+                this.booking = result;
+                                        console.log("booking done");
+ 		this.alertCtrl.presentAlert("Booking done");
+                                }, (err) => {
+                this.loading.dismiss();
+                                        console.log("booking failed");
+ 		this.alertCtrl.presentAlert("Booking failed");
+                                });
+  }
+  getBookings() {
+
+
+   this.bookingService.getBookings().then((result: Array<any>) => {
+                this.bookings = result;
+                console.log("got bookings");
+                       }, (err) => {
+                console.log("no bookings");
+                });
+
+  }
 
 /*
   checkFunds() {

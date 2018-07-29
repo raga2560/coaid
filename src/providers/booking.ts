@@ -18,7 +18,7 @@ export class BookingService {
 
   getBookings(){
 
-    var tryurl = this.url + '/api/bookingmade/getbookings' 
+    var tryurl = this.url + '/api/booking/getBookings' 
     return new Promise((resolve, reject) => {
 
       let headers = new Headers();
@@ -38,7 +38,7 @@ export class BookingService {
 
   createBooking(bookingdata){
 
-    var tryurl = this.url + '/api/bookingmade/createbooking/';
+    var tryurl = this.url + '/api/booking/createBooking/';
 
     return new Promise((resolve, reject) => {
 

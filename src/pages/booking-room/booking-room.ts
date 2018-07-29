@@ -26,6 +26,7 @@ export class BookingRoomPage {
   rooms: any;
   bookings: any;
   booking: any;
+  relationship: any;
 
   constructor(public navCtrl: NavController, 
               public loadingCtrl: LoadingController,
@@ -38,12 +39,14 @@ export class BookingRoomPage {
             roomname: '',
             bookingdate: '',
 	    starttime: '',
+	    requester: 'ramesh',
             endtime: ''
     };
 
     this.bookingdate = '';
     this.starttime = '';
     this.endtime = '' ;
+    this.relationship = 'new' ;
 
     this.rooms = [
 	{name: 'MR101', phone: '4567878990'},
@@ -93,13 +96,18 @@ export class BookingRoomPage {
 
    this.bookingService.createBooking(this.bookingdata).then((result) => {
                 this.loading.dismiss();
+                if(result.status == 101) {
+
+ 		this.alertCtrl.presentAlert(result.reason);
+                } else {
                 this.booking = result;
                                         console.log("booking done");
  		this.alertCtrl.presentAlert("Booking done");
+                }
                                 }, (err) => {
                 this.loading.dismiss();
                                         console.log("booking failed");
- 		this.alertCtrl.presentAlert("Booking failed");
+ 		this.alertCtrl.presentAlert("Booking failed" );
                                 });
   }
   getBookings() {

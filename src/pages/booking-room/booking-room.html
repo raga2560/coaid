@@ -16,7 +16,20 @@
 
 <ion-content padding>
 
+<ion-segment [(ngModel)]="relationship"   >
+    <ion-segment-button  class="segmentbutton" value="new">
+      New
+    </ion-segment-button>
+    <ion-segment-button   class="segmentbutton" value="bookings">
+      Current Bookings
+    </ion-segment-button>
+  </ion-segment>
+
+<div [ngSwitch]="relationship">
+  <div *ngSwitchCase="'new'">
+
   <ion-list  inset padding>
+
    <ion-item-divider class="roundedge">
              Room booking 
         </ion-item-divider>
@@ -56,19 +69,24 @@
 
         <ion-item>
    <ion-label><ion-icon name="clock"></ion-icon> Booking start time </ion-label>
-  <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm " minuteValues="0,15,30,45" [(ngModel)]="starttime"></ion-datetime>
+  <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm A" minuteValues="0,15,30,45" [(ngModel)]="starttime"></ion-datetime>
         </ion-item>
 
         <ion-item>
   <ion-label><ion-icon name="clock"></ion-icon> Booking end time </ion-label>
-  <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm " minuteValues="0,15,30,45" [(ngModel)]="endtime"></ion-datetime>
+  <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm A" minuteValues="0,15,30,45" [(ngModel)]="endtime"></ion-datetime>
 
         </ion-item>
         <ion-item>
    <button ion-button full  class="colorbutton" (click)="bookroom()" >Book </button>
 
         </ion-item>
-
+        </ion-list>
+</div>
+</div>
+<div [ngSwitch]="relationship">
+  <div *ngSwitchCase="'bookings'">
+  <ion-list  inset >
    <ion-item-divider class="roundedge">
              Current bookings 
         </ion-item-divider>
@@ -76,19 +94,25 @@
        <ion-item-sliding *ngFor="let todo of bookings">
 
       <ion-item>
-       <ion-label >
-        <h3> {{todo.name}} </h3>
+       <ion-label item-left >
+        <h3> {{todo.room}} </h3>
+        {{todo.bookingdate}}
         </ion-label>
 
         <span item-right  >
-          {{todo.bookingdate}}, from {{todo.starttime}} to {{todo.endtime}} 
+           from {{todo.starttime}} to {{todo.endtime}} 
         </span>
       </ion-item>
 
     </ion-item-sliding>
+      <ion-item *ngIf="bookings.length == 0">
+      No bookings
+      </ion-item>
 
    </ion-list>
  
+</div>
+</div>
 
 
 </ion-content>

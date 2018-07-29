@@ -94,9 +94,9 @@ export class BookingRoomPage {
   createBooking() {
     this.showLoader();
 
-   this.bookingService.createBooking(this.bookingdata).then((result) => {
+   this.bookingService.createBooking(this.bookingdata).then((result: any) => {
                 this.loading.dismiss();
-                if(result.status == 101) {
+                if(typeof result.status !== 'undefined' && result.status == 101) {
 
  		this.alertCtrl.presentAlert(result.reason);
                 } else {

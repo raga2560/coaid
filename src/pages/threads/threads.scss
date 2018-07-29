@@ -22,7 +22,7 @@
    white-space: -o-pre-wrap;   /* Opera 7 */    
    word-wrap: break-word;      /* IE */
 }
-
+/*
 .segment-button.segment-activated {
     color: black;
     background-color: #f4f4f4;// #ffdd00;
@@ -35,3 +35,13 @@
 .segment-button { 
   color: black;
 }
+ 
+*/
+
+.segmentbutton {
+
+                border-radius: 30px !important;
+                background-color: map-get($colors, twitter);
+                font-size: 0.9em;
+}
+

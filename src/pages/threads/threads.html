@@ -3,14 +3,8 @@
     <button ion-button menuToggle>
       <ion-icon name='menu'></ion-icon>
     </button>
-    <ion-segment [(ngModel)]="segment" >
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
+    <ion-title>Community Room </ion-title>
+
 
     <ion-buttons end>
       <button ion-button *ngIf="!internetConnected" (click)="notify('Working offline..')">
@@ -22,13 +16,20 @@
     </ion-buttons>
   </ion-navbar>
 
-  <ion-toolbar no-border-top>
-    <ion-searchbar primary [(ngModel)]="queryText"  placeholder="Search for a thread..">
-    </ion-searchbar>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+    <ion-searchbar class="segmentbutton" [(ngModel)]="queryText"  placeholder="Search for a thread..">
+    </ion-searchbar>
+
+    <ion-segment [(ngModel)]="segment" padding >
+      <ion-segment-button  class="segmentbutton" value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button  class="segmentbutton" value="favorites">
+        Favorites
+      </ion-segment-button>
+    </ion-segment>
 
   <ion-refresher (ionRefresh)="reloadThreads($event)" *ngIf="segment=='all'">
     <ion-refresher-content></ion-refresher-content>

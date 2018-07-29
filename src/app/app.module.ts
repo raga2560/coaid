@@ -70,7 +70,7 @@ import { VisitorExpectedPageModule } from '../pages/visitor-expected/visitor-exp
     VisitorListPageModule,
     VisitorExpectedPageModule,
     LogoutPageModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp , {mode:'ios'}),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],

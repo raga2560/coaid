@@ -14,9 +14,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
 
-<ion-segment [(ngModel)]="relationship"   >
+<ion-segment [(ngModel)]="relationship"   padding>
     <ion-segment-button  class="segmentbutton" value="new">
       New
     </ion-segment-button>
@@ -28,7 +28,7 @@
 <div [ngSwitch]="relationship">
   <div *ngSwitchCase="'new'">
 
-  <ion-list  inset padding>
+  <ion-list  inset >
 
    <ion-item-divider class="roundedge">
              Room booking 
@@ -48,7 +48,7 @@
 
     </ion-item-sliding>
       <ion-item>
-        Selected room: <span item-right> {{bookingdata.roomname}} </span>
+        Room: <span item-right> {{bookingdata.roomname}} </span>
       </ion-item>
 
 
@@ -63,17 +63,17 @@
         </ion-item -->
 
 <ion-item>
-<ion-label><ion-icon name="date"></ion-icon> Select booking date</ion-label>
+<ion-label>Date</ion-label>
   <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="bookingdate"></ion-datetime>
 </ion-item>
 
         <ion-item>
-   <ion-label><ion-icon name="clock"></ion-icon> Booking start time </ion-label>
+   <ion-label><ion-icon name="clock"></ion-icon>Start time </ion-label>
   <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm A" minuteValues="0,15,30,45" [(ngModel)]="starttime"></ion-datetime>
         </ion-item>
 
         <ion-item>
-  <ion-label><ion-icon name="clock"></ion-icon> Booking end time </ion-label>
+  <ion-label><ion-icon name="clock"></ion-icon>End time </ion-label>
   <ion-datetime displayFormat="hh:mm A" pickerFormat="hh mm A" minuteValues="0,15,30,45" [(ngModel)]="endtime"></ion-datetime>
 
         </ion-item>
